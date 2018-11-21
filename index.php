@@ -6,8 +6,7 @@ if(isset($_POST['submit'])){
 	$email = trim($_POST['email']);
 	$name = trim($_POST['name']);
 	$subject = trim($_POST['subject']);
-	$message = trim($_POST['message']);
-	
+	$message = trim($_POST['message']);	
 	if(
 	!((empty($email)) || 
 	(empty($name)) || 
@@ -27,25 +26,15 @@ if(isset($_POST['submit'])){
 						if($validation->validate_text($message, 50, 1000, 'Message', $reg_exp_text, $characters_allowed_text) === true){
 							/** 
 							* @param $name - full name from for input
-							* @param $email - email address from form input 
-							
-							* @param $to - email address for recieving emails 
-								(recommendation: it should be the same as email address 
-								that you created inside your web hosting account)
-								
+							* @param $email - email address from form input 							
+							* @param $to - email address for recieving emails (recommendation: it should be the same as email address that you created inside your web hosting account)	
 							* @param $subject - data from Subject form input
-							* @param $website - url of your website where form is located
-							
-							* @param $host - Smtp address of server that will send the email.
-								It can be found inside of your web hosting account.
-								(usually web hosting providers enable you to use their smtp server)
-								
+							* @param $website - url of your website where form is located						
+							* @param $host - Smtp address of server that will send the email. It can be found inside of your web hosting account(usually web hosting providers enable you to use their smtp server).								
 							* @param $username - email address that you created inside your web hosting account
-							* @param $password - $password for email address that you created inside your web hosting account
-							
+							* @param $password - $password for email address that you created inside your web hosting account							
 								Note: $host, $username, $password - need to be associated with the same web hosting account.
 								In order to script works change these variables with values in:
-								
 								Send_email::send_email_out($name, $email, $subject, $message, $to, $website, $host, $username, $password);
 							*/
 							$result = Send_email::send_email_out($name, $email, $subject, $message, $to, $website, $host, $username, $password);

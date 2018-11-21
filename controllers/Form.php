@@ -5,17 +5,13 @@
 */
 class Form{
 	/** 
-	* @desc this method is for validating text based on a number of characters
-		and allowed characters (uses regular expressions)
+	* @desc this method is for validating text based on a number of characters and allowed characters (uses regular expressions)
 	* @param $text - string from form input 
-	* @param $char_num_low - number that represents a minimal number of characters 
-		that can ce accepted from form input
-	* @param $char_num_low - number that represents a maximal number of characters 
-		that can ce accepted from form input
+	* @param $char_num_low - number that represents a minimal number of characters that can ce accepted from form input
+	* @param $char_num_low - number that represents a maximal number of characters that can ce accepted from form input
 	* @param $field represents a label(name of the form field) from form input
 	* @param $reg_exp represents a regular expression used in validation
-	* @param $characters_allowed is textual representation of what characters 
-		are allowed
+	* @param $characters_allowed is textual representation of what characters are allowed
 	*/
 	public function validate_text($text, $char_num_low, $char_num_high, $field, $reg_exp, $characters_allowed){
 		if(
