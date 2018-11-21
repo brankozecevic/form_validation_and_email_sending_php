@@ -1,7 +1,6 @@
 <?php
 require_once 'controllers/Form.php';
 require_once 'controllers/Send_email.php';
-
 if(isset($_POST['submit'])){
 	$email = trim($_POST['email']);
 	$name = trim($_POST['name']);
@@ -16,10 +15,8 @@ if(isset($_POST['submit'])){
 		$reg_exp_name = '/^[a-zA-Z ]*$/';
 		$reg_exp_text = "/^[-a-zA-Z0-9\s.:,]*$/";
 		$characters_allowed_full_name = 'spaces , letters and numbers';
-		$characters_allowed_text = '. , : , - , , , spaces , letters and numbers';
-		
-		$validation = new Form;	
-		
+		$characters_allowed_text = '. , : , - , , , spaces , letters and numbers';		
+		$validation = new Form;			
 		if($validation->validate_text($name, 3, 50, 'Full Name', $reg_exp_name, $characters_allowed_full_name) === true){
 				if($validation->validate_email($email) === true){
 					if($validation->validate_text($subject, 3, 150, 'Subject', $reg_exp_text, $characters_allowed_text) === true){
@@ -37,8 +34,7 @@ if(isset($_POST['submit'])){
 								In order to script works change these variables with values in:
 								Send_email::send_email_out($name, $email, $subject, $message, $to, $website, $host, $username, $password);
 							*/
-							$result = Send_email::send_email_out($name, $email, $subject, $message, $to, $website, $host, $username, $password);
-							
+							$result = Send_email::send_email_out($name, $email, $subject, $message, $to, $website, $host, $username, $password);							
 						}else $result = $validation->validate_text($message, 50, 1000, 'Message', $reg_exp_text, $characters_allowed_text);
 					}else $result = $validation->validate_text($subject, 3, 150, 'Subject', $reg_exp_text, $characters_allowed_text);
 				}else $result = $validation->validate_email($email);
@@ -56,7 +52,6 @@ if(isset($_POST['submit'])){
 	<title>Document</title>
 </head>
 <body>
-
 	<div class="container">
 		<div class="col-md-6">
 			<div class="feedback-form">
@@ -88,8 +83,7 @@ if(isset($_POST['submit'])){
 						<textarea class="form-control" rows="4" name="message" id="message-text"
 								placeholder="Write message"></textarea>
 						<p id="message_error1" class="alert alert-danger"></p>
-						<p id="message_error2" class="alert alert-danger"></p>
-						
+						<p id="message_error2" class="alert alert-danger"></p>						
 					</div>
 					<div id="sending-email-bottom" class="row" hidden>
 						<img src="img/if_Outlook_410510.gif" alt="Email is sending!">
@@ -99,7 +93,6 @@ if(isset($_POST['submit'])){
 				</form>
 			</div><!-- .feedback-form -->
 		</div>
-		<div class="col-md-4"></div>
 	</div>
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<script src="js/validation.js"></script>
