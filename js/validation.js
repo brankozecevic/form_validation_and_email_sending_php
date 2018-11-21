@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	//Hiding elements that represents error 
+	//Hiding elements that represents errors
 	$('#name_error1').hide();
 	$('#name_error2').hide();
 	$('#email_error').hide();
@@ -28,7 +28,7 @@ $(document).ready(function(){
 		checkMessage();
 	});
 	
-	//functions that is activated on event on html element
+	//functions that are activated on event on html element
 	
 	//checking length and allowed characters for the form field
 	function checkName(){
@@ -106,7 +106,7 @@ $(document).ready(function(){
 			messageError = true;
 		}
 	}
-	//what happens when user click submit on form
+	//what happens when user click submit on the form
 	$('#contactForm').submit(function(){
 		checkName();
 		checkEmail();
