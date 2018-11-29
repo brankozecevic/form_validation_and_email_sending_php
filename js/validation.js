@@ -95,10 +95,6 @@ $(document).ready(function(){
 	}
 	//what happens when user click submit on the form
 	$('#contactForm').submit(function(){
-		console.log(checkName());
-		console.log(checkEmail());
-		console.log(checkSubject());
-		console.log(checkMessage());
 		
 		if((checkName() === false) || (checkEmail() === false) || (checkSubject() === false) || (checkMessage() === false))		return false;
 		else {
